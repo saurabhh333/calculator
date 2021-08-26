@@ -1,0 +1,150 @@
+<!doctype html><html><head> 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap" rel="stylesheet"> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Calculadora by dixit</title> 
+ <style type="text/css" id="dcoder_stylesheet">*
+  {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .backg
+ {
+    background-image: linear-gradient(0, #c6d1f3, #eef2ff); 
+    height: 100vh;
+    color: #26193d;
+  }
+  .calc
+{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.bot
+{
+  width: 60px;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 21px;
+  margin: 2px;
+  border: #f3f3f3;
+  background-color: #fff;
+}
+.bot:hover
+{
+  background-color: #c2c3c8;
+  transition: all 0,5s;
+}
+.autor
+{
+  text-align: center;
+  font-size: 7px;
+  margin: 2px;
+  height: 11px;
+}
+#resultado
+{
+  background-color: #fafafa;
+  border-radius: 30px;
+  line-height: 50px;
+  height: 50px;
+  font-size: 21px;
+  margin: 2px;
+  max-width: 350px;
+}</style></head> 
+ <body class="backg"> 
+  <div class="calc"> 
+   <h1> Calcul </h1> 
+   <p id="resultado"></p> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td><button id="cle" class="bot" onclick="clean()">C</button></td> 
+      <td><button id="bac" class="bot" onclick="back()">&lt;</button></td> 
+      <td><button id="div" class="bot" style="background-color: #c5f3bf;" onclick="insert('/')">÷</button></td> 
+      <td><button id="mul" class="bot" style="background-color: #ecf3ae;" onclick="insert('*')">×</button></td> 
+     </tr> 
+     <tr> 
+      <td><button id="set" class="bot" onclick="insert('7')" ,"vibrar()">7</button></td> 
+      <td><button id="oit" class="bot" onclick="insert('8')">8</button></td> 
+      <td><button id="nov" class="bot" onclick="insert('9')">9</button></td> 
+      <td><button id="men" class="bot" style="background-color: #f3d4e9;" onclick="insert('+')">+</button></td> 
+     </tr> 
+     <tr> 
+      <td><button id="qua" class="bot" onclick="insert('4')">4</button></td> 
+      <td><button id="cin" class="bot" onclick="insert('5')">5</button></td> 
+      <td><button id="sei" class="bot" onclick="insert('6')">6</button></td> 
+      <td><button id="mai" class="bot" style="background-color: #bfc2f3;" onclick="insert('-')">-</button></td> 
+     </tr> 
+     <tr> 
+      <td><button id="um" class="bot" onclick="insert('1')">1</button></td> 
+      <td><button id="doi" class="bot" onclick="insert('2')">2</button></td> 
+      <td><button id="tre" class="bot" onclick="insert('3')">3</button></td> 
+      <td rowspan="2"><button id="igu" class="bot" style="height: 100px; background-color: #f3a877;" onclick="calcular()">=</button></td> 
+     </tr> 
+     <tr> 
+      <td colspan="2"><button id="zer" class="bot" style="width: 120px;" onclick="insert('0')">0</button></td> 
+      <td><button id="pon" class="bot" onclick="insert('.')">.</button></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p class="autor"> @Made by dixit</p> 
+ 
+<script type="text/javascript" id="dcoder_script">function insert (num)
+{
+  var numero = document.getElementById("resultado").innerHTML;
+  document.getElementById("resultado").innerHTML = numero + num;
+}
+
+function clean ()
+{
+  document.getElementById("resultado").innerHTML = " ";
+}
+
+function back ()
+{
+  var resultado = document.getElementById("resultado").innerHTML;
+  document.getElementById("resultado").innerHTML = resultado.substring(0, resultado.length -1);
+}
+
+function calcular()
+{
+  var resultado = document.getElementById("resultado").innerHTML;
+  if (resultado){
+    document.getElementById("resultado").innerHTML = eval(resultado);
+  }
+   else {
+    document.getElementById("resultado").innerHTML = "Nada...";
+  }
+}
+function vibrar ()
+{
+  navigator.vibrate(25);
+}
+
+window.navigator = window.navigator || {};
+      window.navigator = window.navigator || {};   
+      document.getElementById('cle').addEventListener('click', vibrar);
+      document.getElementById('bac').addEventListener('click', vibrar);
+      document.getElementById('div').addEventListener('click', vibrar);
+      document.getElementById('mul').addEventListener('click', vibrar);
+      document.getElementById('set').addEventListener('click', vibrar);
+      document.getElementById('oit').addEventListener('click', vibrar);
+      document.getElementById('nov').addEventListener('click', vibrar);
+      document.getElementById('men').addEventListener('click', vibrar);
+      document.getElementById('qua').addEventListener('click', vibrar);
+      document.getElementById('cin').addEventListener('click', vibrar);
+      document.getElementById('sei').addEventListener('click', vibrar);
+      document.getElementById('mai').addEventListener('click', vibrar);
+      document.getElementById('um').addEventListener('click', vibrar);
+      document.getElementById('doi').addEventListener('click', vibrar);
+      document.getElementById('tre').addEventListener('click', vibrar);
+      document.getElementById('igu').addEventListener('click', vibrar);
+      document.getElementById('zer').addEventListener('click', vibrar);
+      document.getElementById('pon').addEventListener('click', vibrar);
+      
+//Tentei "pegar" os elementos pela classe, mas não consegui : ("</script></body></html>
